@@ -1,13 +1,21 @@
 const request = require('request');
 const http = require('http');
 
-// request.post({ url: 'https://headlight-tournament-2.herokuapp.com/register', form: '"callsign": "XelpmisFree"' }, (err, res, body) => {
-//   if (err) {
-//     console.log('ERROR: ', err);
-//   } else {
-//     console.log('body: ', body);
-//   }
-// });
+const data = {
+  callsign: 'XelpmisFree',
+};
+
+const cb = function (response) {
+  console.log('Here is my response: ', response);
+};
+
+request.post({ url: 'https://headlight-tournament-2.herokuapp.com/register', form: JSON.stringify(data) }, (err, res, body) => {
+  if (err) {
+    console.log('ERROR: ', err);
+  } else {
+    console.log('body: ', JSON.parse(body));
+  }
+});
 
 function SendPOSTRequest(path, data, callback) {
   const options = {
@@ -36,12 +44,5 @@ function SendPOSTRequest(path, data, callback) {
 
 // Sample request
 
-const data = {
-  callsign: 'XelpmisFree',
-};
 
-const cb = function (response) {
-  console.log('Here is my response: ', response);
-};
-
-SendPOSTRequest('/register', data, cb);
+// SendPOSTRequest('/register', data, cb);
