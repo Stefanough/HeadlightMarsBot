@@ -31,6 +31,7 @@ The bot will land (instantiate) and begin to scan the surrounding area. Basic lo
   -Claim node.
 - Repeat until entire 100 x 100 area is scanned.
 
-### Low Level
-
 ## Installation
+
+`npm install`
+`node boScript.js`
