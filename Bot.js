@@ -4,9 +4,13 @@
 class Bot {
   constructor(callsign) {
     this.callsign = callsign;
-    this.pos;
+    this.pos = { x: 0, y: 0 };
     this.nodes = [];
-    this.currNode;
+    // this.currNode;
+  }
+
+  updatePosition(x, y) {
+    this.pos = { x, y };
   }
 }
 
